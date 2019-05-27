@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="109.922" height="109.922" viewBox="0 0 109.922 109.922">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="40" height="40" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Group_1570" data-name="Group 1570" transform="translate(-254 -225)">
+    <rect id="Rectangle_1476" data-name="Rectangle 1476" width="109.922" height="109.922" transform="translate(254 225)" fill="#fff"/>
+    <g id="Messages" transform="translate(289 249)" clip-path="url(#clip-path)">
+      <rect id="Rectangle_117" data-name="Rectangle 117" width="40" height="40" fill="none"/>
+      <path id="Path_50" data-name="Path 50" d="M35,6H5L20,21ZM0,6C0,2.7,2.25,0,5,0H35c2.75,0,5,2.7,5,6V30c0,3.3-2.25,6-5,6H5c-2.75,0-5-2.7-5-6Z" transform="translate(0 2)" fill="#ea847c" fill-rule="evenodd"/>
+    </g>
+    <text id="Mail" transform="translate(309 312)" fill="#f58e81" font-size="12" font-family="Gibson-SemiBold, Gibson" font-weight="600"><tspan x="-11.868" y="0">Mail</tspan></text>
+  </g>
+</svg>

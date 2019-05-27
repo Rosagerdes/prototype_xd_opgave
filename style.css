@@ -1,0 +1,195 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0 auto;
+    padding-top: 45px;
+    font-family: sans-serif;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 100px;
+    background-color: #EA5045;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/*Kea logo placerer sig på venstre siden af profil og menuen*/
+header .logo {
+    color: #ffffff;
+    height: 50px;
+    line-height: 50px;
+    font-size: 24px;
+    float: left;
+
+}
+
+/*menuen placerer sig i højre side når det er webversion*/
+header nav {
+    float: right;
+
+}
+
+header nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    list-style: none;
+
+}
+
+header nav ul li a {
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    font-size: 2rem;
+
+
+}
+
+/*profil ikonet*/
+.profile_icon {
+    float: right;
+    margin-top: calc((50px - 16px) / 2);
+    margin-right: 16px;
+}
+
+/*burger ikonet*/
+.menu_toggle {
+    color: #ffffff;
+    float: right;
+    line-height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+}
+
+
+
+
+.section_wrapper {
+    margin: 5px 15px;
+}
+
+
+
+.theme_descr,
+.next_assignment,
+.upload_assignment {
+    background-color: #F2F1F0;
+    padding: 10px;
+    height: 70px;
+    margin: 10px 0;
+}
+
+.section_next,
+.section_upload,
+.section_previous {
+    margin-top: 40px;
+}
+
+.previous_ass {
+    padding: 10px;
+    height: 70px;
+}
+
+h3,
+p {
+    margin: 7px;
+
+}
+
+
+/*gør at p og img ligger ved siden af hinanden som standard row*/
+.col {
+    display: flex;
+}
+
+.txt {
+    flex-grow: 5;
+}
+
+.img {
+    flex-grow: 1;
+}
+
+.img_link {
+    background-image: url(assets/link_ikon.svg);
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+
+}
+
+.img_upload {
+    background-image: url(assets/upload.svg);
+    background-repeat: no-repeat;
+    width: 22px;
+    height: 22px;
+}
+
+.img_arrow {
+    background-image: url(assets/pil_ned.svg);
+
+    background-repeat: no-repeat;
+    width: 10px;
+    height: 10px;
+}
+
+/*Gør at menuen folder sig ud ved stor skærm*/
+@media (max-width: 991px) {
+    header {
+        padding: 0 20px;
+    }
+
+    .menu_toggle {
+        display: block;
+    }
+
+    /*menuen der slider ind*/
+    header nav {
+        position: absolute;
+        width: 100%;
+        height: calc(100vh - 50px);
+        background-color: #3F3140;
+        top: 50px;
+        left: -100%;
+        transition: 0.5s;
+    }
+
+    /*menuen fylder 0 så den fylder skærmen ud*/
+    header nav.active {
+        left: 0px;
+    }
+
+    /*block=ligger under hinanden*/
+    header nav ul {
+        display: block;
+        text-align: center;
+        padding-top: 25px;
+    }
+
+}
+
+/*gør at der kan hovers og farverne ændres*/
+@media (min-width: 992px) {
+    header nav ul li a:hover {
+        color: #F58E81;
+        background-color: #ffffff;
+
+    }
+}

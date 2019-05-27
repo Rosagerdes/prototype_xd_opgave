@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="109.922" height="109.922" viewBox="0 0 109.922 109.922">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="109.922" height="109.922" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect width="43" height="43" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-3">
+      <rect width="16" height="16" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Group_1578" data-name="Group 1578" transform="translate(-15 -594)">
+    <g id="Component_4_2" data-name="Component 4 – 2" transform="translate(15 594)" clip-path="url(#clip-path)">
+      <rect id="Rectangle_1477" data-name="Rectangle 1477" width="109.922" height="109.922" fill="#fff"/>
+    </g>
+    <text id="Afleveringer" transform="translate(72 683)" fill="#f58e81" font-size="12" font-family="Gibson-SemiBold, Gibson" font-weight="600"><tspan x="-34.482" y="0">Afleveringer</tspan></text>
+    <g id="Component_5_2" data-name="Component 5 – 2" transform="translate(50 618)" clip-path="url(#clip-path-2)">
+      <g id="Down_arrow" data-name="Down arrow" transform="translate(30 30) rotate(180)" clip-path="url(#clip-path-3)">
+        <path id="Path_10" data-name="Path 10" d="M8,0,6.545,1.455l5.506,5.506H0V9.039H12.052L6.545,14.545,8,16l8-8Z" transform="translate(16) rotate(90)" fill="#ea847c"/>
+      </g>
+      <g id="Rectangle_1479" data-name="Rectangle 1479" fill="none" stroke="#f58e81" stroke-linejoin="round" stroke-width="4">
+        <rect width="43" height="43" rx="5" stroke="none"/>
+        <rect x="2" y="2" width="39" height="39" rx="3" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>
