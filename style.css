@@ -8,14 +8,15 @@ html {
 
 body {
     margin: 0 auto;
-    padding-top: 45px;
+    padding-top: 80px;
     font-family: sans-serif;
 }
 
 header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
+    display: flex;
     padding: 0 100px;
     background-color: #EA5045;
     width: 100%;
@@ -24,19 +25,42 @@ header {
 
 /*Kea logo placerer sig på venstre siden af profil og menuen*/
 header .logo {
-    color: #ffffff;
     height: 50px;
-    line-height: 50px;
-    font-size: 24px;
-    float: left;
+    flex-grow: 1;
+}
+
+header .logo img {
+    height: 24px;
+    margin-top: 13px;
 
 }
+
+/*----- kea logo til loginsiden ------*/
+
+body.login {
+    padding-top: 0;
+
+}
+
+.login header {
+    position: static;
+
+}
+
+.login header .logo {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+.login header .logo img {
+    height: 34px;
+    margin-top: 83px;
+}
+
 
 /*menuen placerer sig i højre side når det er webversion*/
-header nav {
-    float: right;
-
-}
+header nav {}
 
 header nav ul {
     margin: 0;
@@ -62,8 +86,8 @@ header nav ul li a {
 }
 
 /*profil ikonet*/
+/*den røde boks er 50px, ikonet er 16px. det der er tilbage bliver divideret med 2 for at placere resultatet øverst i toppen, så det skubber ikonet ned på midten*/
 .profile_icon {
-    float: right;
     margin-top: calc((50px - 16px) / 2);
     margin-right: 16px;
 }
@@ -71,22 +95,104 @@ header nav ul li a {
 /*burger ikonet*/
 .menu_toggle {
     color: #ffffff;
-    float: right;
     line-height: 50px;
     font-size: 24px;
     cursor: pointer;
     display: none;
 }
 
-
-
-
 .section_wrapper {
     margin: 5px 15px;
 }
 
+/*---- loginsiden ------*/
+.login .section_wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: calc(100vh - 230px);
+    min-height: 400px;
+}
+
+.loginform {
+    display: flex;
+    flex-direction: column;
+}
+
+.loginform .facebook {
+    position: relative;
+    border: 2px solid #EA5045;
+    color: #EA5045;
+    text-align: center;
+    border-radius: 50px;
+    line-height: 40px
+}
+
+/*--- ::before laver et ekstra tag (en ekstra plads) foran. Det gøres sådan her for at jeg kan lægge billedet ind gennem css'en*/
+.loginform .facebook::before {
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    content: "";
+    height: 20px;
+    width: 20px;
+    background: url(assets/facebook.svg);
+    background-size: 20px;
+}
+
+.form {
+    max-width: 50px;
+}
+
+/*---- forsiden (med grid'et) -----*/
+
+.container {
+    display: grid;
+    grid-template-columns: 125px 125px 125px;
+    grid-template-rows: 125px 125px 125px 125px 125px 125px;
+    grid-gap: 10px;
+    background-color: #faf7f7;
+    justify-content: center;
+    padding-top: 30px;
+    color: #EA847C;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+a {
+    color: #EA847C;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+}
 
 
+.item {
+    background-color: white;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    padding: 23px 0;
+}
+
+.tech {
+    grid-column: 1 / span 2;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.aktuelt {
+    grid-column: 2 / span 2;
+    grid-row: 4 / span 2;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+
+
+
+
+/*----- afleveringssiden ------*/
 .theme_descr,
 .next_assignment,
 .upload_assignment {
@@ -105,6 +211,7 @@ header nav ul li a {
 .previous_ass {
     padding: 10px;
     height: 70px;
+    display: none;
 }
 
 h3,
@@ -125,6 +232,8 @@ p {
 
 .img {
     flex-grow: 1;
+
+
 }
 
 .img_link {
@@ -150,6 +259,17 @@ p {
     height: 10px;
 }
 
+.open .previous_ass {
+    display: block;
+}
+
+.open .img_arrow {
+    transform: rotate(180deg);
+}
+
+/*-------- Media query -------*/
+
+
 /*Gør at menuen folder sig ud ved stor skærm*/
 @media (max-width: 991px) {
     header {
@@ -167,7 +287,7 @@ p {
         height: calc(100vh - 50px);
         background-color: #3F3140;
         top: 50px;
-        left: -100%;
+        left: 100%;
         transition: 0.5s;
     }
 
