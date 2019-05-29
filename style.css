@@ -105,7 +105,13 @@ header nav ul li a {
     margin: 5px 15px;
 }
 
-/*---- loginsiden ------*/
+/*===== loginsiden ====*/
+
+.login {
+    background-color: #faf7f7;
+}
+
+
 .login .section_wrapper {
     display: flex;
     justify-content: space-between;
@@ -119,14 +125,94 @@ header nav ul li a {
     flex-direction: column;
 }
 
+/*-- fjerner den pre-lavede box---*/
+.save_login {
+    display: none;
+
+}
+
+/*--- laver en ny box som er rund og hvid ---*/
+.new_checkbox {
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: white;
+    vertical-align: middle;
+    margin-right: 10px;
+    position: relative;
+
+}
+
+.continue {
+    background-color: #ea5045;
+    color: white;
+    display: block;
+    width: 80vw;
+    max-width: 500px;
+    height: 50px;
+    padding: 5px;
+    border: none;
+    border-radius: 50px;
+    margin: 0 auto 15px;
+    color: white;
+    font-weight: bold;
+}
+
+.label_save_login {
+    display: block;
+    width: 80vw;
+    max-width: 500px;
+    margin: 0 auto 15px;
+    position: relative;
+    vertical-align: middle;
+}
+
+
+/*--- laver den røde check knap som har samme input som den anden box ---*/
+.label_save_login input:checked ~ .new_checkbox::before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    top: 5px;
+    left: 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #ea5045;
+
+}
+
 .loginform .facebook {
     position: relative;
     border: 2px solid #EA5045;
     color: #EA5045;
     text-align: center;
     border-radius: 50px;
-    line-height: 40px
+    line-height: 40px;
 }
+
+.loginform,
+.facebook,
+.brugernavn,
+.password {
+    display: block;
+    width: 80vw;
+    max-width: 500px;
+    height: 50px;
+    padding: 5px;
+    border: none;
+    border-radius: 50px;
+    margin: 0px auto 15px;
+    color: #ea5045;
+}
+
+/*noget der skulle være på til nogen browsere, noget med en grå kant. Men backets vil ikke fange ind input og gøre den gul som class'en, så den fanger den ikke. Og på Freja's kan vi ikke se hvad det er der sker*/
+/*.login input:focus {
+    outline: none;
+}*/
+
 
 /*--- ::before laver et ekstra tag (en ekstra plads) foran. Det gøres sådan her for at jeg kan lægge billedet ind gennem css'en*/
 .loginform .facebook::before {
@@ -136,15 +222,17 @@ header nav ul li a {
     content: "";
     height: 20px;
     width: 20px;
-    background: url(assets/facebook.svg);
+    background: url(assets/login/facebook.svg);
     background-size: 20px;
 }
 
-.form {
-    max-width: 50px;
+.glemtpassword {
+    display: block;
+    text-align: center;
 }
 
-/*---- forsiden (med grid'et) -----*/
+
+/*======== forsiden (med firkant-grid'et) ========*/
 
 .container {
     display: grid;
@@ -188,11 +276,8 @@ a {
     font-weight: bold;
 }
 
+/*====== afleveringssiden ======*/
 
-
-
-
-/*----- afleveringssiden ------*/
 .theme_descr,
 .next_assignment,
 .upload_assignment {
@@ -267,7 +352,81 @@ p {
     transform: rotate(180deg);
 }
 
-/*-------- Media query -------*/
+
+/*====== Uploadsiden =====*/
+
+.upload {
+    background-color: #faf7f7;
+}
+
+.upload .section_wrapper {
+    max-width: 500px;
+    width: 80vw;
+    margin: auto;
+
+}
+
+.upload p {
+    font-weight: bold;
+    font-size: 13px;
+    margin: 10px 0
+}
+
+.upload h2 {
+    margin: 30px 0 7px 0;
+    max-width: 500px;
+}
+
+.opgave,
+.inset,
+.gruppe {
+    display: block;
+    width: 80vw;
+    max-width: 500px;
+    height: 50px;
+    padding: 5px;
+    border: none;
+    border-radius: 50px;
+    margin: 0px auto 15px;
+    color: #ea5045;
+}
+
+.preview_container {
+    display: inline-block;
+    width: auto;
+    height: 40px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 2px solid #ea5045;
+    color: #ea5045;
+    margin: 0 0 10px;
+    background-color: white;
+
+
+}
+
+.aflever {
+    background-color: #ea5045;
+    color: white;
+    display: block;
+    width: 80vw;
+    max-width: 500px;
+    height: 50px;
+    padding: 5px;
+    border: none;
+    border-radius: 50px;
+    margin: 0 auto 15px;
+    color: white;
+    font-weight: bold;
+}
+
+
+/*noget der skulle være på til nogen browsere, noget med en grå kant. Men backets vil ikke fange ind input og gøre den gul som class'en, så den fanger den ikke. Og på Freja's kan vi ikke se hvad det er der sker*/
+/*.upload input:focus {
+    outline: none;
+}*/
+
+/*======== Media query ======*/
 
 
 /*Gør at menuen folder sig ud ved stor skærm*/

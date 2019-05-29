@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="upload">
     <header>
         <div class="logo">
             <img src="assets/kea_logo.svg" alt="kea logo">
@@ -24,16 +24,29 @@
                 <li><a href="#indstillinger">Indstillinger</a></li>
             </ul>
         </nav>
-        <div class="menu_toggle">☰</div>
         <div class="profile_icon">
             <img src="assets/profile.svg" alt="profil ikon">
         </div>
+        <div class="menu_toggle">☰</div>
+
     </header>
 
+    <div class="section_wrapper">
+        <h1>Upload</h1>
+        <p class="date_from"><time datetime="2019-05-28 00:00">Fra: 28-05-2019 kl. 00:00</time></p>
+        <p class="date_to"><time datetime="2019-05-31 23:59">Fra: 28-05-2019 kl. 23:59</time></p>
 
-
-
-
+        <form class="uploadform" action="rock_on.html">
+            <h2>Opgave</h2>
+            <input class="opgave" type="text" value="04.01.01 - Opgavebeskrivelse - Design Sprint">
+            <h2>Indsæt aflevering</h2>
+            <input class="inset" type="text" value="http://claryfy.nu/kea/01-web/02-html/01_02_03_styleguide/index.html">
+            <div class="preview_container"><a class="preview" href="#">Preview</a></div>
+            <h2>Gruppe aflevering</h2>
+            <input class="gruppe" type="text" value="Freja, Catrine, Rosa">
+            <input class="aflever" type="submit" value=Aflever>
+        </form>
+    </div>
 
     <script src="script.js"></script>
 </body></html>
