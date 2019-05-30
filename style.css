@@ -102,10 +102,10 @@ header nav ul li a {
 }
 
 .section_wrapper {
-    margin: 5px 15px;
+    padding: 20px;
 }
 
-/*===== loginsiden ====*/
+/*===== index/loginsiden ====*/
 
 .login {
     background-color: #faf7f7;
@@ -118,6 +118,8 @@ header nav ul li a {
     flex-direction: column;
     height: calc(100vh - 230px);
     min-height: 400px;
+    max-width: 500px;
+    margin: auto;
 }
 
 .loginform {
@@ -149,8 +151,7 @@ header nav ul li a {
     background-color: #ea5045;
     color: white;
     display: block;
-    width: 80vw;
-    max-width: 500px;
+    width: 100%;
     height: 50px;
     padding: 5px;
     border: none;
@@ -162,9 +163,7 @@ header nav ul li a {
 
 .label_save_login {
     display: block;
-    width: 80vw;
-    max-width: 500px;
-    margin: 0 auto 15px;
+    margin-bottom: 15px;
     position: relative;
     vertical-align: middle;
 }
@@ -190,18 +189,20 @@ header nav ul li a {
     color: #EA5045;
     text-align: center;
     border-radius: 50px;
-    line-height: 40px;
+    line-height: 46px;
 }
 
-.loginform,
-.facebook,
+.loginform {
+    padding-top: 25px;
+}
+
 .brugernavn,
-.password {
+.password,
+.facebook {
     display: block;
-    width: 80vw;
-    max-width: 500px;
+    width: 100%;
     height: 50px;
-    padding: 5px;
+    padding: 0 20px;
     border: none;
     border-radius: 50px;
     margin: 0px auto 15px;
@@ -218,7 +219,7 @@ header nav ul li a {
 .loginform .facebook::before {
     position: absolute;
     left: 20px;
-    top: 10px;
+    top: 13px;
     content: "";
     height: 20px;
     width: 20px;
@@ -277,6 +278,11 @@ a {
 }
 
 /*====== afleveringssiden ======*/
+
+.aflevering .section_wrapper {
+    max-width: 500px;
+    margin: auto;
+}
 
 .theme_descr,
 .next_assignment,
@@ -359,11 +365,16 @@ p {
     background-color: #faf7f7;
 }
 
+
 .upload .section_wrapper {
     max-width: 500px;
-    width: 80vw;
     margin: auto;
 
+}
+
+.uploadform {
+    display: flex;
+    flex-direction: column;
 }
 
 .upload p {
@@ -381,10 +392,9 @@ p {
 .inset,
 .gruppe {
     display: block;
-    width: 80vw;
-    max-width: 500px;
+    width: 100%;
     height: 50px;
-    padding: 5px;
+    padding: 10px 20px;
     border: none;
     border-radius: 50px;
     margin: 0px auto 15px;
@@ -392,8 +402,9 @@ p {
 }
 
 .preview_container {
-    display: inline-block;
-    width: auto;
+    width: 100px;
+    text-align: center;
+    align-self: flex-end;
     height: 40px;
     padding: 10px 20px;
     border-radius: 50px;
@@ -430,7 +441,7 @@ p {
 
 
 /*Gør at menuen folder sig ud ved stor skærm*/
-@media (max-width: 991px) {
+@media (max-width: 1199px) {
     header {
         padding: 0 20px;
     }
@@ -439,7 +450,7 @@ p {
         display: block;
     }
 
-    /*menuen der slider ind*/
+    /*menuen der slider ind fra højre*/
     header nav {
         position: absolute;
         width: 100%;
@@ -465,7 +476,7 @@ p {
 }
 
 /*gør at der kan hovers og farverne ændres*/
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
     header nav ul li a:hover {
         color: #F58E81;
         background-color: #ffffff;
