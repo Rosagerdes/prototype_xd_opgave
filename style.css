@@ -456,15 +456,15 @@ p {
 }
 
 
-/*noget der skulle være på til nogen browsere, noget med en grå kant. Men backets vil ikke fange ind input og gøre den gul som class'en, så den fanger den ikke. Og på Freja's kan vi ikke se hvad det er der sker*/
-/*.upload input:focus {
+/*noget der skulle være på til nogen browsere, noget med en grå kant. Men backets vil ikke fange ind input og gøre den gul som class'en, så den fanger den ikke. Og på Freja's kan vi ikke se hvad det er der sker (primært firefox og safari's ældre versioner) DEn skulle muligvis være lavet på alt*/
+.upload input:focus {
     outline: none;
-}*/
+}
 
 /*======== Media query ======*/
 
 
-/*Gør at menuen folder sig ud ved stor skærm*/
+/*Når den bliver under 1199px får den de styles på der ligger herunder*/
 @media (max-width: 1199px) {
     header {
         padding: 0 20px;
@@ -474,7 +474,7 @@ p {
         display: block;
     }
 
-    /*menuen der slider ind fra højre*/
+    /*burgermenuen slider ind fra højre. Hvis der ikke er minusset med 50px i height vil der være scroll på for di den så vl være for lang. - 50 er i forhold til top 50 og header/nav'en*/
     header nav {
         position: absolute;
         width: 100%;
@@ -485,12 +485,12 @@ p {
         transition: 0.5s;
     }
 
-    /*menuen fylder 0 så den fylder skærmen ud når den har fået classen active på via js*/
+    /*burgermenuen fylder 0 så den fylder skærmen ud når den har fået classen active på via js*/
     header nav.active {
         left: 0px;
     }
 
-    /*block=ligger under hinanden*/
+    /*block=ligger under hinanden inde i burgermenuen*/
     header nav ul {
         display: block;
         text-align: center;
@@ -506,3 +506,5 @@ p {
         background-color: #ffffff;
     }
 }
+
+/*det er blevet gjort lidt omvendt med media query'en. Al mobil ting skulle have været oppe i resten af koden og kun desktop ting som skulle ophæve mobil versionens styles, skulle være her nederst*/

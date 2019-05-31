@@ -16,7 +16,7 @@ function sidenVises() {
     document.querySelector("header .menu_toggle").addEventListener("click", toggleMenu);
 }
 
-//Når der er klikket får nav'en class'en "active" på. Når nav'en er "active" er den true og skifter (toggler) textcontent "stiber" ud med et "X". Hvis den ikke er active (hvis der bliver trykket igen) Skifter (toggler) den til stiber igen.
+//Når der er klikket får nav'en class'en "active" på. Når nav'en er "active" er den true og skifter (toggler) textcontent "stiber" ud med et "X". Når den er ude er der et X på. Hvis den ikke er active (hvis der bliver trykket igen) Skifter (toggler) den til stiber igen.
 
 function toggleMenu() {
     console.log("toggleMenu");
@@ -31,7 +31,7 @@ function toggleMenu() {
     }
 }
 
-/*Der lyttes efter et klik i theme_descr. Når klikket kommer bliver class'en "open" tilføjet. Den overskriver deklaration'en display: none i css'en på class'en "previous ass"*/
+/*Der lyttes efter et klik i theme_descr. Når klikket kommer bliver class'en "open" tilføjet den .theme der er tættest på (parrent). Den overskriver deklaration'en display: none i css'en på class'en "previous ass"*/
 
 document.querySelector(".theme .theme_descr").addEventListener("click", toggleAssignments);
 
