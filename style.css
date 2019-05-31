@@ -1,10 +1,16 @@
+/*border-box gør at padding forbliver inde i boxen*/
+
 * {
     box-sizing: border-box;
 }
 
+/*generel font-size for hele dokumentet. Kan evt ændres efter ligthhouse testen viste at noget tekst var for småt, ellers skal der ses på hver enkelt styling*/
+
 html {
     font-size: 62.5%;
 }
+
+/*Margin'en er auto, så den content'en ligger sig i midten, 0 er for at fjerne de pre-indstillinger der er for websider*/
 
 body {
     margin: 0 auto;
@@ -12,66 +18,47 @@ body {
     font-family: sans-serif;
 }
 
+/*header på alle sider*/
+/*Header er fixed, så den følger med ned når der scrolles. Den er en parent og har fået flex på for, at de underliggende childelementer kan lave flex-grow. width fylder det hele ud. Top:0 for at den bliver helt øverst. padding 100 for i desktop at give lidt luft i begge sider.*/
+
 header {
     position: fixed;
     top: 0;
-    left: 0;
     display: flex;
-    padding: 0 100px;
+    padding: 0px 100px;
     background-color: #EA5045;
     width: 100%;
-    box-sizing: border-box;
+
 }
 
-/*Kea logo placerer sig på venstre siden af profil og menuen*/
+/*Kea logo har flex-grow på for at placere sig på venstre siden af profil og menuen. height 50, så den fylder 50 og ikke er for stor*/
 header .logo {
     height: 50px;
     flex-grow: 1;
 }
 
+/*Margin og height så det passer med logo heigt på 50px og logoet placere sig i midten. 24+13=37, 50-37=13, 13 øverst og nederst for logoet */
 header .logo img {
     height: 24px;
     margin-top: 13px;
 
 }
 
-/*----- kea logo til loginsiden ------*/
 
-body.login {
-    padding-top: 0;
-
-}
-
-.login header {
-    position: static;
-
-}
-
-.login header .logo {
-    height: 200px;
-    display: flex;
-    justify-content: center;
-}
-
-.login header .logo img {
-    height: 34px;
-    margin-top: 83px;
-}
-
-
-/*menuen placerer sig i højre side når det er webversion*/
-header nav {}
-
+/*display:flex fordi den er parent til et child element der skal bruge flex. Margin og padding så burgermenu placerer sig rigtigt*/
 header nav ul {
     margin: 0;
     padding: 0;
     display: flex;
 }
 
+/* none gør at der ikke kommer små prikker foran li'erne*/
 header nav ul li {
     list-style: none;
 
 }
+
+/*height og lineheight bestemmer højden på ul elementerne. padding mellem li'erne. "none" så der ikke kommer streg under links. blok gør at a-tagget er i en blok og ikke opfører sig underligt  */
 
 header nav ul li a {
     height: 50px;
@@ -92,7 +79,7 @@ header nav ul li a {
     margin-right: 16px;
 }
 
-/*burger ikonet*/
+/*burger ikonet. curser bliver til en hånd.*/
 .menu_toggle {
     color: #ffffff;
     line-height: 50px;
@@ -101,17 +88,41 @@ header nav ul li a {
     display: none;
 }
 
-.section_wrapper {
-    padding: 20px;
-}
 
 /*===== index/loginsiden ====*/
 
 .login {
-    background-color: #faf7f7;
+    background-color: #c8d0d8;
 }
 
 
+/*----- kea logo til loginsiden ------*/
+/*fjerner en pading over headeren*/
+body.login {
+    padding-top: 0;
+
+}
+
+/*header fylder så sectionwrapperen ikke hopper op*/
+.login header {
+    position: static;
+
+}
+
+/*height gør at det røde fylder. display flex gør at justefy-content:center virker, og ligger logoet i midten */
+.login header .logo {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+/*Margin placerer logo. height bestemmer logo højde*/
+.login header .logo img {
+    height: 34px;
+    margin-top: 83px;
+}
+
+/*display flex gør at "glemt password" laver spacebetween og column virker på felx direction. Height placerer "glemtpassword" en passende distance væk, så den ikke overlapper med fb*/
 .login .section_wrapper {
     display: flex;
     justify-content: space-between;
@@ -122,20 +133,20 @@ header nav ul li a {
     margin: auto;
 }
 
+/*display flex gør at column virker*/
 .loginform {
     display: flex;
     flex-direction: column;
+    padding-top: 25px;
 }
 
 /*-- fjerner den pre-lavede box---*/
 .save_login {
     display: none;
-
 }
 
-/*--- laver en ny box som er rund og hvid ---*/
+/*--- laver en ny box som er rund og hvid. vertical align:middel gør at teksten centrere sig.  ---*/
 .new_checkbox {
-    content: "";
     display: inline-block;
     width: 30px;
     height: 30px;
@@ -144,9 +155,30 @@ header nav ul li a {
     vertical-align: middle;
     margin-right: 10px;
     position: relative;
-
 }
 
+/*Relative på fordi jeg har absolut på new chechbox når den er cheked. Muligvis behøver jeg ikke vertical-align: middel, men lader den blive på da den reagerede sidst. Måske har jeg lineheight på et sted.*/
+.label_save_login {
+    display: block;
+    margin-bottom: 15px;
+    position: relative;
+    /* vertical-align: middle;*/
+}
+
+
+/*--- laver den røde check knap som har samme input som den anden box. absolut plasere den røde i den hvide i midten ---*/
+.label_save_login input:checked ~ .new_checkbox::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #ea5045;
+}
+
+/*width fylder 100% af max-widt på 500px fra section_wrapper. Borderradius gør kanterne runde. Margin auto placere i midten. Margin 0 og 15 placere venstere og bunden*/
 .continue {
     background-color: #ea5045;
     color: white;
@@ -157,45 +189,10 @@ header nav ul li a {
     border: none;
     border-radius: 50px;
     margin: 0 auto 15px;
-    color: white;
     font-weight: bold;
 }
 
-.label_save_login {
-    display: block;
-    margin-bottom: 15px;
-    position: relative;
-    vertical-align: middle;
-}
-
-
-/*--- laver den røde check knap som har samme input som den anden box ---*/
-.label_save_login input:checked ~ .new_checkbox::before {
-    content: "";
-    position: absolute;
-    display: inline-block;
-    top: 5px;
-    left: 5px;
-    width: 20px;
-    height: 20px;
-    border-radius: 10px;
-    background-color: #ea5045;
-
-}
-
-.loginform .facebook {
-    position: relative;
-    border: 2px solid #EA5045;
-    color: #EA5045;
-    text-align: center;
-    border-radius: 50px;
-    line-height: 46px;
-}
-
-.loginform {
-    padding-top: 25px;
-}
-
+/*padding inde i de hvide form-felter. border-radius runder hjørnerne. Margin placere kasserne i forhold til hinanden*/
 .brugernavn,
 .password,
 .facebook {
@@ -206,7 +203,7 @@ header nav ul li a {
     border: none;
     border-radius: 50px;
     margin: 0px auto 15px;
-    color: #ea5045;
+    color: ##EA5045;
 }
 
 /*noget der skulle være på til nogen browsere, noget med en grå kant. Men backets vil ikke fange ind input og gøre den gul som class'en, så den fanger den ikke. Og på Freja's kan vi ikke se hvad det er der sker*/
@@ -214,8 +211,17 @@ header nav ul li a {
     outline: none;
 }*/
 
+/*relative for at fb img viser sig. text-align så den placerer sig i midten, sammen med line-heigt*/
+.loginform .facebook {
+    position: relative;
+    border: 2px solid #EA5045;
+    color: #EA5045;
+    text-align: center;
+    border-radius: 50px;
+    line-height: 46px;
+}
 
-/*--- ::before laver et ekstra tag (en ekstra plads) foran. Det gøres sådan her for at jeg kan lægge billedet ind gennem css'en*/
+/*--- ::before laver et ekstra tag (en ekstra plads) foran. Det gøres sådan her for at jeg kan lægge billedet ind gennem css'en. content"" for at der findes en plads til img. backgroundsize som passer til height og width. absolut så img kommer frem. Left og top placerer img ude til venstre */
 .loginform .facebook::before {
     position: absolute;
     left: 20px;
@@ -227,6 +233,7 @@ header nav ul li a {
     background-size: 20px;
 }
 
+/*teksten kommer i midten i en block*/
 .glemtpassword {
     display: block;
     text-align: center;
@@ -235,12 +242,17 @@ header nav ul li a {
 
 /*======== forsiden (med firkant-grid'et) ========*/
 
+.forside {
+    background-color: #c8d0d8;
+}
+
+
+/*grid som bestemmer at det kan opbygges i grid. 3 kollonner hen og 6 rækker ned. grid-gab=mellemrum mellem firkanterne. justefy-content for at grid placerer sig i midten. padding top grid placeres rigtigt i forhold til header/nav*/
 .container {
     display: grid;
     grid-template-columns: 125px 125px 125px;
     grid-template-rows: 125px 125px 125px 125px 125px 125px;
     grid-gap: 10px;
-    background-color: #faf7f7;
     justify-content: center;
     padding-top: 30px;
     color: #EA847C;
@@ -248,6 +260,7 @@ header nav ul li a {
     font-weight: bold;
 }
 
+/*none så der ikke kommer streg på link*/
 a {
     color: #EA847C;
     font-size: 12px;
@@ -255,7 +268,7 @@ a {
     text-decoration: none;
 }
 
-
+/*grid inde i hver item kasse, center x 2 så det kommer i midten. padding så content i hvert grid presses tættere på hinanden*/
 .item {
     background-color: white;
     display: grid;
@@ -264,12 +277,14 @@ a {
     padding: 23px 0;
 }
 
+/*skal fylde 2 kollonner mod højre. fra kolonne 1.*/
 .tech {
     grid-column: 1 / span 2;
     font-size: 20px;
     font-weight: bold;
 }
 
+/*skal fylde 2 kolonner og 2 rækker, start fra kolonne 2 og til højre og række 4og ned*/
 .aktuelt {
     grid-column: 2 / span 2;
     grid-row: 4 / span 2;
@@ -279,6 +294,16 @@ a {
 
 /*====== afleveringssiden ======*/
 
+.aflevering {
+    background-color: #c8d0d8;
+}
+
+/*på afleveringssiden og uploadsiden bruges paddingen til at komme på plads*/
+.section_wrapper {
+    padding: 20px;
+}
+
+/*max-width fylder op til 500px. Margin auto placerer section_wrapper i midten */
 .aflevering .section_wrapper {
     max-width: 500px;
     margin: auto;
@@ -362,7 +387,7 @@ p {
 /*====== Uploadsiden =====*/
 
 .upload {
-    background-color: #faf7f7;
+    background-color: #c8d0d8;
 }
 
 
@@ -398,7 +423,7 @@ p {
     border: none;
     border-radius: 50px;
     margin: 0px auto 15px;
-    color: #ea5045;
+    color: #000000;
 }
 
 .preview_container {
@@ -420,14 +445,13 @@ p {
     background-color: #ea5045;
     color: white;
     display: block;
-    width: 80vw;
+    width: 100%;
     max-width: 500px;
     height: 50px;
     padding: 5px;
     border: none;
     border-radius: 50px;
     margin: 0 auto 15px;
-    color: white;
     font-weight: bold;
 }
 
@@ -461,7 +485,7 @@ p {
         transition: 0.5s;
     }
 
-    /*menuen fylder 0 så den fylder skærmen ud*/
+    /*menuen fylder 0 så den fylder skærmen ud når den har fået classen active på via js*/
     header nav.active {
         left: 0px;
     }
@@ -475,11 +499,10 @@ p {
 
 }
 
-/*gør at der kan hovers og farverne ændres*/
+/*gør at der kan hovers og farverne ændres i menuen når den er i fuld skærm*/
 @media (min-width: 1200px) {
     header nav ul li a:hover {
         color: #F58E81;
         background-color: #ffffff;
-
     }
 }

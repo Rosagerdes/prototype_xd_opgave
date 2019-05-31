@@ -5,15 +5,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="noindex" name="robots">
+    <meta name="Description" content="Rosa Gerdes. Skoleopgave af en prototype af fronter. Forsiden med grid">
     <title>Forside</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="forside">
     <header>
         <div class="logo">
             <img src="assets/kea_logo.svg" alt="kea logo">
         </div>
+
+        <!-- i nav'en er der en menu. På desktop er menuen synlig. På mobil er det en burgermenu-->
 
         <nav>
             <ul>
@@ -29,9 +32,13 @@
         <div class="profile_icon">
             <img src="assets/profile.svg" alt="profil ikon">
         </div>
+
+        <!--burgermenuen toggler mellem dette ikon og et X-ikon. Det sker i JS-->
         <div class="menu_toggle">☰</div>
 
     </header>
+
+    <!--alle div'erne herunder bliver i css'en bygget op som et grid. Derfor har de 2 class'. Så man kan style på alle og på hver især-->
 
     <div class="container">
 
